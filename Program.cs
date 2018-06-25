@@ -20,7 +20,8 @@ namespace lb1_project
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .UseUrls("http://0.0.0.0:7575/")
+                .UseKestrel()
+                .UseIISIntegration()
                 .Build();
     }
 }
